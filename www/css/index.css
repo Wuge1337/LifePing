@@ -1,0 +1,263 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* 头部样式 */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    color: #2c3e50;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+header p {
+    color: #7f8c8d;
+    font-size: 1.1rem;
+}
+
+/* 容器通用样式 */
+.container {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.container h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+}
+
+/* 表单元素样式 */
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"] {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="tel"]:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+    outline: none;
+}
+
+/* 按钮样式 */
+button {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(52, 152, 219, 0.4);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* 特定按钮样式 */
+#register-btn {
+    width: 100%;
+    margin-top: 10px;
+    padding: 14px;
+    font-size: 1.1rem;
+}
+
+.check-in-btn {
+    background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+    box-shadow: 0 4px 10px rgba(46, 204, 113, 0.3);
+    width: 100%;
+    padding: 16px;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.check-in-btn:hover {
+    box-shadow: 0 6px 15px rgba(46, 204, 113, 0.4);
+}
+
+#add-contact-btn {
+    background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
+    box-shadow: 0 4px 10px rgba(155, 89, 182, 0.3);
+    margin-top: 10px;
+}
+
+#add-contact-btn:hover {
+    box-shadow: 0 6px 15px rgba(155, 89, 182, 0.4);
+}
+
+#send-message-btn {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+    box-shadow: 0 4px 10px rgba(231, 76, 60, 0.3);
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 14px;
+}
+
+#send-message-btn:hover {
+    box-shadow: 0 6px 15px rgba(231, 76, 60, 0.4);
+}
+
+/* 删除按钮样式 */
+.delete-btn {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+    box-shadow: 0 4px 10px rgba(231, 76, 60, 0.3);
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    margin-left: 10px;
+}
+
+.delete-btn:hover {
+    box-shadow: 0 6px 15px rgba(231, 76, 60, 0.4);
+}
+
+/* 联系人项目样式 */
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.contact-item .contact-input {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+/* 签到状态文本 */
+#checkin-status {
+    text-align: center;
+    font-style: italic;
+    color: #7f8c8d;
+    margin-top: 10px;
+}
+
+/* 通知容器样式 */
+#notification-container {
+    background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+    border-left: 5px solid #e74c3c;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    .contact-item {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .contact-item .delete-btn {
+        margin-left: 0;
+        margin-top: 10px;
+        width: 100%;
+    }
+}
+
+/* 暗色模式支持 */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+        color: #ecf0f1;
+    }
+
+    .container {
+        background: #34495e;
+        color: #ecf0f1;
+    }
+
+    header {
+        background: rgba(52, 73, 94, 0.9);
+    }
+
+    header h1,
+    .container h2,
+    label {
+        color: #ecf0f1;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="tel"] {
+        background: #2c3e50;
+        border-color: #4a6572;
+        color: #ecf0f1;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="password"]:focus,
+    input[type="tel"]:focus {
+        border-color: #3498db;
+        box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.3);
+    }
+
+    #checkin-status {
+        color: #bdc3c7;
+    }
+}

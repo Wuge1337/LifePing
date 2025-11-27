@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="color-scheme" content="light dark">
+    <!-- <meta http-equiv="Content-Security-Policy"content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;"> -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com; 
+                   script-src 'self' 'unsafe-eval'; 
+                   style-src 'self'; 
+                   img-src 'self' data: content:; 
+                   media-src *;">
+    <link rel="stylesheet" href="css/index.css">
+    <title>lifePing</title>
+</head>
+
+<body>
+    <header>
+        <h1>LifePing</h1>
+        <p>Enhancing Personal Safety</p>
+    </header>
+    <div class="container" id="register-container">
+        <h2>Register</h2>
+        <label for="username">Username:</label>
+        <input type="text" id="username" placeholder="Enter your name">
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="Enter your email">
+        <label for="password">Password:</label>
+        <input type="password" id="password" placeholder="Enter your password">
+        <button id="register-btn">Register</button>
+    </div>
+
+    <div class="container" id="checkin-container" style="display:none;">
+        <h2>Daily Check-In</h2>
+        <button class="check-in-btn" id="add-checkIn-btn">I'm OK ✅</button>
+        <p id="checkin-status"></p>
+    </div>
+
+
+    <div class="container" id="notification-container" style="display:none;">
+        <h2>Emergency Notification Sent</h2>
+        <p>No response received. Your emergency contacts have been notified.</p>
+    </div>
+
+
+    <div class="container" id="contacts-container">
+        <h2>Add emergency contact</h2>
+        <input type="tel" placeholder="Enter phone number" class="contact-input">
+        <!-- <button onclick="addContactInput()">Add Another Contact</button> -->
+        <button id="add-contact-btn">Add Another Contact</button>
+    </div>
+    <button id="send-message-btn">Test send message to all</button>
+
+
+    <div class="container" id="settings-container">
+        <h2>Settings</h2>
+        <!-- 自动签到开关 -->
+        <div class="setting-item">
+            <label for="auto-checkin-toggle">Auto Check-In when opening app:</label>
+            <input type="checkbox" id="auto-checkin-toggle">
+        </div>
+        <!-- 紧急通知时间滑块 -->
+        <div class="setting-item">
+            <label for="emergency-hours-slider">Emergency alert after (hours): <span
+                    id="emergency-hours-value">24</span></label>
+            <input type="range" id="emergency-hours-slider" min="1" max="24" value="12" step="1">
+            <p class="setting-description">Send emergency message if no check-in within this time</p>
+        </div>
+        <!-- 警告通知时间滑块 -->
+        <div class="setting-item">
+            <label for="warning-hours-slider">Warning notification after (hours): <span
+                    id="warning-hours-value">6</span></label>
+            <input type="range" id="warning-hours-slider" min="1" max="12" value="1" step="1">
+            <p class="setting-description">Send warning to user before emergency alert</p>
+        </div>
+        <button id="save-settings-btn">Save Settings</button>
+    </div>
+
+    <button id="log-out">Log out</button>
+
+
+
+    <script src="cordova.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
